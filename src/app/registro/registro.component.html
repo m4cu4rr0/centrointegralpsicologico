@@ -1,1 +1,38 @@
-<p>registro works!</p>
+<div class="container">
+  <div class="imagen" *ngIf="cuestionario == 0">
+    <img class="img" src="../../assets/img/logo.jpeg">
+  </div>
+  <div class="login" *ngIf="cuestionario == 0">
+    <label class="folio">Ingrese su Folio:</label>
+    <mat-form-field class="input">
+      <input matInput/>
+      <mat-placeholder class="placeholder">
+        Folio
+      </mat-placeholder>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="validarFolio()" class="btn">Entrar</button>
+  </div>
+  <div class="datos" *ngIf="cuestionario == 1">
+    <mat-grid-list cols="2" rowHeight="80px">
+      <mat-grid-tile [colspan]="2">
+        <label class="titulo">Ingrese sus Datos</label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <label class="folio">Nombe Completo:</label>
+        <mat-form-field class="input">
+          <input matInput/>
+          <mat-placeholder class="placeholder">
+            Nombre
+          </mat-placeholder>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <label class="opcion" >Sexo:</label>
+        <mat-radio-group>
+          <mat-radio-button value="M" class="radio" color="primary">Masculino</mat-radio-button>
+          <mat-radio-button value="F" class="radio" color="primary">Femenino</mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
+    </mat-grid-list>    
+  </div>
+</div>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
+  cuestionario = 0;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  validarFolio(){
+    this.cuestionario = 1;
   }
 
 }
