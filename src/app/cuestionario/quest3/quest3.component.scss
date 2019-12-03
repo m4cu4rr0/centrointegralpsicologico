@@ -7,28 +7,33 @@
 .titulo{
   font-weight: bold;
   font-size: 23px;
+  color: #3F50B5;
 }
 
 .pregunta{
   font-size: 19px;
   margin: 1%;
+  color: #3F50B5;
 }
 
 .opcion{
   font-size: 17px;
   margin: 1%;
   width: 80%;
+  color: #3F50B5;
 }
 
 .opcion2{
   font-size: 17px;
   margin: 1%;
   width: 100%;
+  color: #3F50B5;
 }
 
 .radio{
   margin: 1%;
   font-size: 17px;
+  color: #3F50B5;
 }
 
 .btnRow{
@@ -38,4 +43,8 @@
 
 .btn{
   margin-left: 5%;
+}
+.progreso{
+  font-weight: bold;
+  color: #3F50B5;
 }

@@ -13,6 +13,7 @@ export class Quest2Component implements OnInit {
   error = 0;
   serCliente: number;
   esJefe: number;
+  progreso: number;
 
   quest2 = {
       preg1 : null,
@@ -66,6 +67,7 @@ export class Quest2Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.progreso = 0;
   }
 
   anterior() {
@@ -89,6 +91,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 19.8;
       }
     } else if (this.seccion == 2){
       if(this.quest2.preg10 === null ||
@@ -100,6 +103,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 28.6;
       }
     } else if (this.seccion == 3){
       if(this.quest2.preg14 === null ||
@@ -111,6 +115,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 37.4;
       }
     } else if (this.seccion == 4){
       if(this.quest2.preg18 === null ||
@@ -123,6 +128,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 48.4;
       }
     } else if (this.seccion == 5){
       if(this.quest2.preg23 === null ||
@@ -135,6 +141,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 59.4;
       }
     } else if (this.seccion == 6){
       if(this.quest2.preg28 === null ||
@@ -155,6 +162,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 88;
       }
     } else if (this.seccion == 7){
       if(this.quest2.preg41 === null ||
@@ -165,6 +173,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion++;
         this.error = 0;
+        this.progreso = 94.6;
       }
     } else if (this.seccion == 8){
       if(this.quest2.preg44 === null ||
@@ -175,6 +184,7 @@ export class Quest2Component implements OnInit {
         window.scroll(0, 0);
         this.seccion = 1;
         this.error = 0;
+        this.calificarQuest();
         this.salir()
       }
     }
@@ -198,6 +208,13 @@ export class Quest2Component implements OnInit {
       this.quest2.preg44 = '0';
       this.quest2.preg45 = '0';
       this.quest2.preg46 = '0';
+    }
+  }
+
+  calificarQuest(){
+    let calFinal: number = 0;
+    for(let preg in this.quest2){
+      calFinal += +this.quest2[preg];
     }
   }
 
