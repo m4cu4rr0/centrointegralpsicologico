@@ -119,5 +119,10 @@ export class RegistroComponent implements OnInit {
     this.cuestionario = 2;
   }
 
+  salidaQuest3($event) {
+    this.nuevaPersona.quest3 = $event;
+    this.cuestionario = 2;
+  }
+
 
 }

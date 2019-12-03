@@ -290,7 +290,10 @@
         <h4 mat-line>Cuestionario para identificar a los factores de riesgo psicosocial en los centros de trabajo</h4>
       </mat-list-item>
       <mat-divider *ngIf="encuestaActual.quest2" ></mat-divider>
-      <mat-list-item *ngIf="encuestaActual.quest3" class="cuestionario"  [ngStyle]="{'cursor': nuevaPersona.quest3 === null ? 'pointer' : 'none'}">
+      <mat-list-item *ngIf="encuestaActual.quest3" 
+                      class="cuestionario"  
+                      [ngStyle]="{'cursor': nuevaPersona.quest3 === null ? 'pointer' : 'none'}"
+                      (click)="questionario3()">
         <mat-icon mat-list-icon *ngIf="nuevaPersona.quest3 === null">check_box_outline_blank</mat-icon>
         <mat-icon mat-list-icon *ngIf="nuevaPersona.quest3 !== null">check</mat-icon>
         <h4 mat-line>Cuestionario para identificar a los factores de riesgo psicosocial y avaluar el entorno organizacional en los centros de trabajo</h4>
@@ -303,5 +306,8 @@
   </div>
   <div class="datos" *ngIf="cuestionario == 4">
     <app-quest2 (jsonSalida)="salidaQuest2($event)"></app-quest2>
+  </div>
+  <div class="datos" *ngIf="cuestionario == 5">
+    <app-quest2 (jsonSalida)="salidaQuest3($event)"></app-quest2>
   </div>
 </div>
