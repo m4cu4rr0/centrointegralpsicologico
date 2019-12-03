@@ -212,10 +212,20 @@ export class Quest2Component implements OnInit {
   }
 
   calificarQuest(){
-    let calFinal: number = 0;
+    let calificacion: number = 0;
     for(let preg in this.quest2){
-      calFinal += +this.quest2[preg];
+      calificacion += +this.quest2[preg];
     }
+    let ambienteTrabajo: number = +this.quest2.preg1 + +this.quest2.preg2 + +this.quest2.preg3;
+    let factoresActividad: number =  +this.quest2.preg4 +
+                                     +this.quest2.preg9 +
+                                     +this.quest2.preg5 +
+                                     +this.quest2.preg6 +
+                                     +this.quest2.preg7 +
+                                     +this.quest2.preg8 +
+                                     +this.quest2.preg41 +
+                                     +this.quest2.preg42 +
+                                     +this.quest2.preg43;
   }
 
 }
