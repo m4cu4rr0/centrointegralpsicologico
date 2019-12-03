@@ -11,8 +11,8 @@ export class Quest2Component implements OnInit {
   seccion = 1;
   json: string;
   error = 0;
-  serCliente: boolean;
-  esJefe: boolean;
+  serCliente: number;
+  esJefe: number;
 
   quest2 = {
       preg1 : null,
@@ -74,13 +74,133 @@ export class Quest2Component implements OnInit {
   }
 
   siguiente() {
-      window.scroll(0, 0);
-      this.seccion++;
+    if(this.seccion == 1){
+      if(this.quest2.preg1 === null ||
+        this.quest2.preg2 === null ||
+        this.quest2.preg3 === null ||
+        this.quest2.preg4 === null ||
+        this.quest2.preg5 === null ||
+        this.quest2.preg6 === null ||
+        this.quest2.preg7 === null ||
+        this.quest2.preg8 === null ||
+        this.quest2.preg9 === null ){
+          this.error = 1;
+      }else{
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 2){
+      if(this.quest2.preg10 === null ||
+        this.quest2.preg11 === null ||
+        this.quest2.preg12 === null ||
+        this.quest2.preg13 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 3){
+      if(this.quest2.preg14 === null ||
+        this.quest2.preg15 === null ||
+        this.quest2.preg16 === null ||
+        this.quest2.preg17 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 4){
+      if(this.quest2.preg18 === null ||
+        this.quest2.preg19 === null ||
+        this.quest2.preg20 === null ||
+        this.quest2.preg21 === null ||
+        this.quest2.preg22 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 5){
+      if(this.quest2.preg23 === null ||
+        this.quest2.preg24 === null ||
+        this.quest2.preg25 === null ||
+        this.quest2.preg26 === null ||
+        this.quest2.preg27 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 6){
+      if(this.quest2.preg28 === null ||
+        this.quest2.preg29 === null ||
+        this.quest2.preg30 === null ||
+        this.quest2.preg31 === null ||
+        this.quest2.preg32 === null ||
+        this.quest2.preg33 === null ||
+        this.quest2.preg34 === null ||
+        this.quest2.preg35 === null ||
+        this.quest2.preg36 === null ||
+        this.quest2.preg37 === null ||
+        this.quest2.preg38 === null ||
+        this.quest2.preg39 === null ||
+        this.quest2.preg40 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 7){
+      if(this.quest2.preg41 === null ||
+        this.quest2.preg42 === null ||
+        this.quest2.preg43 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion++;
+        this.error = 0;
+      }
+    } else if (this.seccion == 8){
+      if(this.quest2.preg44 === null ||
+        this.quest2.preg45 === null ||
+        this.quest2.preg46 === null ){
+          this.error = 1;
+      } else {
+        window.scroll(0, 0);
+        this.seccion = 1;
+        this.error = 0;
+        this.salir()
+      }
+    }
   }
 
   salir() {
     this.json = JSON.stringify(this.quest2);
     this.jsonSalida.emit(this.json);
+  }
+
+  clienteChange($event){
+    console.log(this.serCliente);
+    if(this.serCliente == 0){
+      this.quest2.preg41 = '0';
+      this.quest2.preg42 = '0';
+      this.quest2.preg43 = '0';
+    }
+  }
+
+  jefeChange($event){
+    console.log(this.esJefe);
+    if(this.esJefe == 0){
+      this.quest2.preg44 = '0';
+      this.quest2.preg45 = '0';
+      this.quest2.preg46 = '0';
+    }
   }
 
 }
