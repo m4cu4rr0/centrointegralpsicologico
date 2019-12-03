@@ -16,6 +16,7 @@ import {
     MatListModule,
     MatRadioModule,
     MatSelectModule,
+    MatProgressBarModule,
     MAT_DIALOG_DEFAULT_OPTIONS, MatProgressSpinnerModule
 } from '@angular/material';
 
@@ -75,6 +76,7 @@ import { LoadingComponent } from './modal/loading/loading.component';
         MatListModule,
         MatSelectModule,
         MatProgressSpinnerModule,
+        MatProgressBarModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,

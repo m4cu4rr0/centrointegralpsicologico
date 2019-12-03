@@ -13,6 +13,7 @@ export class Quest3Component implements OnInit {
   error = 0;
   serCliente: number;
   esJefe: number;
+  progreso: number;
 
   quest3 = {
       preg1: null,
@@ -92,6 +93,7 @@ export class Quest3Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.progreso = 0;
   }
 
   anterior() {
@@ -111,6 +113,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 7;
         }
     } else if (this.seccion == 2) {
       if(this.quest3.preg6 === null ||
@@ -121,6 +124,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 11.2;
         }
     } else if (this.seccion == 3) {
       if(this.quest3.preg9 === null ||
@@ -132,6 +136,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 16.8;
         }
     } else if (this.seccion == 4) {
       if(this.quest3.preg13 === null ||
@@ -143,6 +148,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 22.4;
         }
     } else if (this.seccion == 5) {
       if(this.quest3.preg17 === null ||
@@ -156,6 +162,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 30.8;
         }
     } else if (this.seccion == 6) {
       if(this.quest3.preg23 === null ||
@@ -169,6 +176,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 39.2;
         }
     } else if (this.seccion == 7) {
       if(this.quest3.preg29 === null ||
@@ -178,6 +186,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 42;
         }
     } else if (this.seccion == 8) {
       if(this.quest3.preg31 === null ||
@@ -191,6 +200,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 50.4;
         }
     } else if (this.seccion == 9) {
       if(this.quest3.preg37 === null ||
@@ -203,6 +213,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 57.4;
         }
     } else if (this.seccion == 10) {
       if(this.quest3.preg42 === null ||
@@ -215,6 +226,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 64.4;
         }
     } else if (this.seccion == 11) {
       if(this.quest3.preg47 === null ||
@@ -232,6 +244,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 78.4;
         }
     } else if (this.seccion == 12) {
       if(this.quest3.preg57 === null ||
@@ -247,6 +260,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 89.4;
         }
     } else if (this.seccion == 13) {
       if(this.quest3.preg65 === null ||
@@ -258,6 +272,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
+          this.progreso = 96;
         }
     } else if (this.seccion == 14) {
       if(this.quest3.preg69 === null ||

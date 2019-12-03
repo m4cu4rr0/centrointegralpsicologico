@@ -39,7 +39,7 @@ export class RegistroComponent implements OnInit {
           this.closeDialog();
           if (this.encuestaActual.id != null) {
             this.error = 0;
-            this.cuestionario = 1;
+            this.cuestionario = 2;
             this.nuevaPersona.folio = this.encuestaActual.id;
           } else {
             this.msj = 'Folio Invalido';

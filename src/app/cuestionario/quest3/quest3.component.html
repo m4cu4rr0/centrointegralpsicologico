@@ -1,4 +1,13 @@
 <div class="container">
+  <section >
+    <label class="progreso">Progreso</label>
+    <mat-progress-bar
+        class="seccion"
+        [color]="primary"
+        [mode]="determinate"
+        [value]="progreso">
+    </mat-progress-bar>
+    </section>
   <div class="seccion" *ngIf="seccion == 1">
     <div>
       <label class="titulo">Para responder las preguntas siguientes considere las condiciones ambientales de su centro de trabajo.</label>
