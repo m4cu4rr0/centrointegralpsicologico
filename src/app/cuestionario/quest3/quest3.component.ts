@@ -312,4 +312,83 @@ export class Quest3Component implements OnInit {
     }
   }
 
+  calificarQuest(){
+    let calificacion: number = 0;
+    for(let preg in this.quest3){
+      calificacion += +this.quest3[preg];
+    }
+    let ambienteTrabajo: number = +this.quest3.preg1 +
+                                  +this.quest3.preg2 +
+                                  +this.quest3.preg3 +
+                                  +this.quest3.preg4 +
+                                  +this.quest3.preg5;
+    let factoresActividad: number = +this.quest3.preg6 +
+                                  +this.quest3.preg12 +
+                                  +this.quest3.preg7 +
+                                  +this.quest3.preg8 +
+                                  +this.quest3.preg9 +
+                                  +this.quest3.preg10 +
+                                  +this.quest3.preg11 +
+                                  +this.quest3.preg65 +
+                                  +this.quest3.preg66 +
+                                  +this.quest3.preg67 +
+                                  +this.quest3.preg68 +
+                                  +this.quest3.preg13 +
+                                  +this.quest3.preg14 +
+                                  +this.quest3.preg15 +
+                                  +this.quest3.preg16 +
+                                  +this.quest3.preg25 +
+                                  +this.quest3.preg26 +
+                                  +this.quest3.preg27 +
+                                  +this.quest3.preg28 +
+                                  +this.quest3.preg23 +
+                                  +this.quest3.preg24 +
+                                  +this.quest3.preg29 +
+                                  +this.quest3.preg30 +
+                                  +this.quest3.preg35 +
+                                  +this.quest3.preg36 ;
+    let organizacionTiempo: number = +this.quest3.preg17 +
+                                +this.quest3.preg18 +
+                                +this.quest3.preg19 +
+                                +this.quest3.preg20 +
+                                +this.quest3.preg21 +
+                                +this.quest3.preg22;
+    let lideranzoRelaciones: number = +this.quest3.preg31 +
+                                  +this.quest3.preg32 +
+                                  +this.quest3.preg33 +
+                                  +this.quest3.preg34 +
+                                  +this.quest3.preg37 +
+                                  +this.quest3.preg38 +
+                                  +this.quest3.preg39 +
+                                  +this.quest3.preg40 +
+                                  +this.quest3.preg41 +
+                                  +this.quest3.preg42 +
+                                  +this.quest3.preg43 +
+                                  +this.quest3.preg44 +
+                                  +this.quest3.preg45 +
+                                  +this.quest3.preg46 +
+                                  +this.quest3.preg69 +
+                                  +this.quest3.preg70 +
+                                  +this.quest3.preg71 +
+                                  +this.quest3.preg72 +
+                                  +this.quest3.preg57 +
+                                  +this.quest3.preg58 +
+                                  +this.quest3.preg59 +
+                                  +this.quest3.preg60 +
+                                  +this.quest3.preg61 +
+                                  +this.quest3.preg62 +
+                                  +this.quest3.preg63 +
+                                  +this.quest3.preg64 ;    
+    let entornoOrganizacional: number = +this.quest3.preg47 +
+                                +this.quest3.preg48 +
+                                +this.quest3.preg49 +
+                                +this.quest3.preg50 +
+                                +this.quest3.preg51 +
+                                +this.quest3.preg52 +
+                                +this.quest3.preg55 +
+                                +this.quest3.preg56 +
+                                +this.quest3.preg53 +
+                                +this.quest3.preg54;                                                                                  
+  }
+
 }
