@@ -1,3 +1,4 @@
+  
 .login{
   position: absolute;
   top: 40%;
@@ -8,9 +9,9 @@
   height: 30%;
 }
 .input{
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 70%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .btn{
@@ -19,6 +20,11 @@
   font-size: 25px;
   padding-left: 25px;
   padding-right: 25px;
+}
+.btn2{
+  margin-top: 50px;
+  margin-left: 45%;
+  font-size: 25px;
 }
 
 .img{
@@ -38,6 +44,7 @@
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  color: #3F50B5;
 }
 .datos{
   width: 80%;
@@ -47,14 +54,26 @@
 .titulo{
   font-size: 20px;
   font-weight: bold;
+  color: #3F50B5;
 }
 .opcion{
-  margin-right: 10px;
+  width: 20%;
+  color: #3F50B5;
 }
 .radio{
   margin: 1%;
 }
+.radioGroup{
+  width: 70%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 .select{
   width: 70%;
-  margin-left: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.cuestionario{
+  color: #3F50B5;
+
 }
