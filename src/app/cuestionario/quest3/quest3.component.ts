@@ -269,7 +269,7 @@ export class Quest3Component implements OnInit {
           this.error = 0;
           window.scroll(0, 0);
           this.seccion++;
-          this. salir()
+          this. salir();
         }
     }
   }
@@ -280,7 +280,6 @@ export class Quest3Component implements OnInit {
   }
 
   clienteChange($event){
-    console.log(this.serCliente);
     if(this.serCliente == 0){
       this.quest3.preg65 = '0';
       this.quest3.preg66 = '0';
@@ -290,7 +289,6 @@ export class Quest3Component implements OnInit {
   }
 
   jefeChange($event){
-    console.log(this.esJefe);
     if(this.esJefe == 0){
       this.quest3.preg69 = '0';
       this.quest3.preg70 = '0';

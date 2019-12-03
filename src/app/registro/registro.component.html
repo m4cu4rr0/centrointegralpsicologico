@@ -283,7 +283,7 @@
       <mat-divider *ngIf="encuestaActual.quest1" ></mat-divider>
       <mat-list-item *ngIf="encuestaActual.quest2" 
                       class="cuestionario" 
-                      [ngStyle]="{'cursor': nuevaPersona.quest2 === null ? 'pointer' : 'none'}"
+                      [ngStyle]="{'cursor': nuevaPersona.quest2 === null ? 'pointer' : 'default'}"
                       (click)="questionario2()">
         <mat-icon mat-list-icon *ngIf="nuevaPersona.quest2 === null">check_box_outline_blank</mat-icon>
         <mat-icon mat-list-icon *ngIf="nuevaPersona.quest2 !== null">check</mat-icon>
@@ -292,7 +292,7 @@
       <mat-divider *ngIf="encuestaActual.quest2" ></mat-divider>
       <mat-list-item *ngIf="encuestaActual.quest3" 
                       class="cuestionario"  
-                      [ngStyle]="{'cursor': nuevaPersona.quest3 === null ? 'pointer' : 'none'}"
+                      [ngStyle]="{'cursor': nuevaPersona.quest3 === null ? 'pointer' : 'default'}"
                       (click)="questionario3()">
         <mat-icon mat-list-icon *ngIf="nuevaPersona.quest3 === null">check_box_outline_blank</mat-icon>
         <mat-icon mat-list-icon *ngIf="nuevaPersona.quest3 !== null">check</mat-icon>

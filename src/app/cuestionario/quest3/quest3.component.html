@@ -649,7 +649,7 @@
                   <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
               </mat-radio-group>
               <label class="opcion2">72.-Ignoran las sugerencias para mejorar su trabajo</label>
-              <mat-radio-group [(ngModel)]="quest3.preg7">
+              <mat-radio-group [(ngModel)]="quest3.preg72">
                   <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
                   <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
                   <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
@@ -659,6 +659,9 @@
             </div>
         </div>
     </div>
+    <mat-error *ngIf="error === 1" class="seccion">
+      Favor de ingresar todos los datos
+    </mat-error>
   <div class="btnRow">
     <button mat-raised-button color="warn" *ngIf="seccion > 1" (click)="anterior()">Anterior</button>
     <button mat-raised-button color="primary" class="btn" (click)="siguiente()">Siguiente</button>

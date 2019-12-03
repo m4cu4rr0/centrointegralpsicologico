@@ -186,7 +186,6 @@ export class Quest2Component implements OnInit {
   }
 
   clienteChange($event){
-    console.log(this.serCliente);
     if(this.serCliente == 0){
       this.quest2.preg41 = '0';
       this.quest2.preg42 = '0';
@@ -195,7 +194,6 @@ export class Quest2Component implements OnInit {
   }
 
   jefeChange($event){
-    console.log(this.esJefe);
     if(this.esJefe == 0){
       this.quest2.preg44 = '0';
       this.quest2.preg45 = '0';

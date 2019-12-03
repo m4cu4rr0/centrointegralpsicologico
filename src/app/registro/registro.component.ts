@@ -34,13 +34,13 @@ export class RegistroComponent implements OnInit {
         this.openDialog('Validando folio ' + this.folio + ' por favor espere');
         this.regService.getEncuesta(this.folio).subscribe(encuesta => {
           this.encuestaActual = encuesta as EncuestaModel;
-          // console.log(encuesta);
         });
         setTimeout(() => {
           this.closeDialog();
           if (this.encuestaActual.id != null) {
             this.error = 0;
-            this.cuestionario = 2;
+            this.cuestionario = 1;
+            this.nuevaPersona.folio = this.encuestaActual.id;
           } else {
             this.msj = 'Folio Invalido';
           }
@@ -53,7 +53,6 @@ export class RegistroComponent implements OnInit {
     }
 
     save() {
-        console.log(this.nuevaPersona);
         if (this.nuevaPersona.contratacion !== null &&
             this.nuevaPersona.departamento !== null &&
             this.nuevaPersona.edad !== null &&
@@ -68,7 +67,6 @@ export class RegistroComponent implements OnInit {
             this.nuevaPersona.puesto !== null &&
             this.nuevaPersona.rotacion !== null &&
             this.nuevaPersona.sexo !== null) {
-            console.log('Lleno');
             this.cuestionario = 2;
         } else {
             this.error = 1;
@@ -122,6 +120,7 @@ export class RegistroComponent implements OnInit {
   salidaQuest3($event) {
     this.nuevaPersona.quest3 = $event;
     this.cuestionario = 2;
+    console.log(this.nuevaPersona);
   }
 
 
