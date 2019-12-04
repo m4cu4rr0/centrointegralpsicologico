@@ -216,20 +216,109 @@ export class Quest2Component implements OnInit {
     for(let preg in this.quest2){
       calificacion += +this.quest2[preg];
     }
-    let ambienteTrabajo: number = +this.quest2.preg1 + +this.quest2.preg2 + +this.quest2.preg3;
-    let factoresActividad: number =  +this.quest2.preg4 +
-      +this.quest2.preg9 +
-      +this.quest2.preg5 +
-      +this.quest2.preg6 +
-      +this.quest2.preg7 +
-      +this.quest2.preg8 +
-      +this.quest2.preg41 +
-      +this.quest2.preg42 +
-      +this.quest2.preg43 +
-      +this.quest2.preg10 +
-      +this.quest2.preg11 +
-      +this.quest2.preg12 +
-      +this.quest2.preg4;
+    let ambienteTrabajo: number = +this.quest2.preg1 + 
+                                  +this.quest2.preg2 + 
+                                  +this.quest2.preg3;
+    let factoresActividad: number = +this.quest2.preg4 +
+                                    +this.quest2.preg9 +
+                                    +this.quest2.preg5 +
+                                    +this.quest2.preg6 +
+                                    +this.quest2.preg7 +
+                                    +this.quest2.preg8 +
+                                    +this.quest2.preg41 +
+                                    +this.quest2.preg42 +
+                                    +this.quest2.preg43 +
+                                    +this.quest2.preg10 +
+                                    +this.quest2.preg11 +
+                                    +this.quest2.preg12 +
+                                    +this.quest2.preg13 +
+                                    +this.quest2.preg20 +
+                                    +this.quest2.preg21 +
+                                    +this.quest2.preg22 +
+                                    +this.quest2.preg18 +
+                                    +this.quest2.preg19 +
+                                    +this.quest2.preg26 +
+                                    +this.quest2.preg27;
+
+    let organizacionTiempo: number =  +this.quest2.preg14 +
+                                      +this.quest2.preg15 +
+                                      +this.quest2.preg16 +
+                                      +this.quest2.preg17;
+
+    let lideranzoRelaciones: number = +this.quest2.preg23 +
+                                      +this.quest2.preg24 +
+                                      +this.quest2.preg25 +
+                                      +this.quest2.preg28 +
+                                      +this.quest2.preg29 +
+                                      +this.quest2.preg30 +
+                                      +this.quest2.preg31 +
+                                      +this.quest2.preg32 +
+                                      +this.quest2.preg44 +
+                                      +this.quest2.preg45 +
+                                      +this.quest2.preg46 +
+                                      +this.quest2.preg33 +
+                                      +this.quest2.preg34 +
+                                      +this.quest2.preg35 +
+                                      +this.quest2.preg36 +
+                                      +this.quest2.preg37 +
+                                      +this.quest2.preg38 +
+                                      +this.quest2.preg39 +
+                                      +this.quest2.preg40;
+
+    let condicionesTrabajo: number =  +this.quest2.preg1 + 
+                                      +this.quest2.preg2 + 
+                                      +this.quest2.preg3;
+
+    let cargaTrabajo: number =  +this.quest2.preg4 +
+                                +this.quest2.preg9 +
+                                +this.quest2.preg5 +
+                                +this.quest2.preg6 +
+                                +this.quest2.preg7 +
+                                +this.quest2.preg8 +
+                                +this.quest2.preg41 +
+                                +this.quest2.preg42 +
+                                +this.quest2.preg43 +
+                                +this.quest2.preg10 +
+                                +this.quest2.preg11 +
+                                +this.quest2.preg12 +
+                                +this.quest2.preg13;
+
+    let faltaControl: number =  +this.quest2.preg20 +
+                                +this.quest2.preg21 +
+                                +this.quest2.preg22 +
+                                +this.quest2.preg18 +
+                                +this.quest2.preg19 +
+                                +this.quest2.preg26 +
+                                +this.quest2.preg27;
+
+    let jornadaTrabajo: number =  +this.quest2.preg14 +
+                                  +this.quest2.preg15;
+
+    let interferenciaRelacion: number = +this.quest2.preg16 +
+                                        +this.quest2.preg17;
+
+    let liderazgo: number = +this.quest2.preg23 +
+                            +this.quest2.preg24 +
+                            +this.quest2.preg25 +
+                            +this.quest2.preg28 +
+                            +this.quest2.preg29;
+
+    let relacionesTrabajo: number = +this.quest2.preg30 +
+                                    +this.quest2.preg31 +
+                                    +this.quest2.preg32 +
+                                    +this.quest2.preg44 +
+                                    +this.quest2.preg45 +
+                                    +this.quest2.preg46;
+
+    let violencia: number = +this.quest2.preg33 +
+                            +this.quest2.preg34 +
+                            +this.quest2.preg35 +
+                            +this.quest2.preg36 +
+                            +this.quest2.preg37 +
+                            +this.quest2.preg38 +
+                            +this.quest2.preg39 +
+                            +this.quest2.preg40;
+
   }
 
 }
