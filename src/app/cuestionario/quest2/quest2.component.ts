@@ -325,7 +325,7 @@ export class Quest2Component implements OnInit {
                             +this.quest2.preg39 +
                             +this.quest2.preg40;
 
-    this.quest2Res = new Quest2Model(null, calificacion, ambienteTrabajo, factoresActividad,
+    this.quest2Res = new Quest2Model(null, null, calificacion, ambienteTrabajo, factoresActividad,
                                     organizacionTiempo, lideranzoRelaciones, condicionesTrabajo, cargaTrabajo,
                                     faltaControl, jornadaTrabajo, interferenciaRelacion, liderazgo, relacionesTrabajo,
                                     violencia);

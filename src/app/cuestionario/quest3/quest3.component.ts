@@ -476,7 +476,7 @@ export class Quest3Component implements OnInit {
                                           +this.quest3.preg53 +
                                           +this.quest3.preg54;
 
-    this.quest3Res = new Quest3Model(null, calificacion, ambienteTrabajo, factoresActividad,
+    this.quest3Res = new Quest3Model(null, null, calificacion, ambienteTrabajo, factoresActividad,
         organizacionTiempo, lideranzoRelaciones, entornoOrganizacional, condicionesTrabajo,
         cargaTrabajo, faltaControl, jornadaTrabajo, interferenciaRelacion, liderazgo, relacionesTrabajo,
         violencia, reconocimientoDesemp, insuficientePertenencia);

@@ -6,7 +6,6 @@ import {RegistroService} from '../services/registro.service';
 import {EncuestaModel} from '../model/encuesta.model';
 import { Quest2Model } from '../model/quest2.model';
 import { Quest3Model } from '../model/quest3.model';
-import { stringToFileBuffer } from '@angular-devkit/core/src/virtual-fs/host';
 
 @Component({
   selector: 'app-registro',
@@ -151,6 +150,10 @@ export class RegistroComponent implements OnInit {
       console.log(resData);
       id = this.regService.uniqueId;
       console.log(id);
+      this.quest2Res.idPersona = id;
+      this.quest3Res.idPersona = id;
+      this.regService.agregarQuest2(this.quest2Res);
+      this.regService.agregarQuest3(this.quest3Res);
     });
     this.cuestionario = 6;
   }

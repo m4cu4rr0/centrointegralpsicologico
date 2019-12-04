@@ -1,5 +1,6 @@
 export class Quest2Model {
   constructor(public id: string,
+              public idPersona: string,
               public calificacion: number,
               public ambienteTrabajo: number,
               public factoresActividad: number,
