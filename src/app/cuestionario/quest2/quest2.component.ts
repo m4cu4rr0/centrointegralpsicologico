@@ -16,52 +16,52 @@ export class Quest2Component implements OnInit {
   progreso: number;
 
   quest2 = {
-      preg1 : null,
-      preg2 : null,
-      preg3 : null,
-      preg4 : null,
-      preg5 : null,
-      preg6 : null,
-      preg7 : null,
-      preg8 : null,
-      preg9 : null,
-      preg10 : null,
-      preg11 : null,
-      preg12 : null,
-      preg13 : null,
-      preg14 : null,
-      preg15 : null,
-      preg16 : null,
-      preg17 : null,
-      preg18 : null,
-      preg19 : null,
-      preg20 : null,
-      preg21 : null,
-      preg22 : null,
-      preg23 : null,
-      preg24 : null,
-      preg25 : null,
-      preg26 : null,
-      preg27 : null,
-      preg28 : null,
-      preg29 : null,
-      preg30 : null,
-      preg31 : null,
-      preg32 : null,
-      preg33 : null,
-      preg34 : null,
-      preg35 : null,
-      preg36 : null,
-      preg37 : null,
-      preg38 : null,
-      preg39 : null,
-      preg40 : null,
-      preg41 : null,
-      preg42 : null,
-      preg43 : null,
-      preg44 : null,
-      preg45 : null,
-      preg46 : null,
+    preg1 : null,
+    preg2 : null,
+    preg3 : null,
+    preg4 : null,
+    preg5 : null,
+    preg6 : null,
+    preg7 : null,
+    preg8 : null,
+    preg9 : null,
+    preg10 : null,
+    preg11 : null,
+    preg12 : null,
+    preg13 : null,
+    preg14 : null,
+    preg15 : null,
+    preg16 : null,
+    preg17 : null,
+    preg18 : null,
+    preg19 : null,
+    preg20 : null,
+    preg21 : null,
+    preg22 : null,
+    preg23 : null,
+    preg24 : null,
+    preg25 : null,
+    preg26 : null,
+    preg27 : null,
+    preg28 : null,
+    preg29 : null,
+    preg30 : null,
+    preg31 : null,
+    preg32 : null,
+    preg33 : null,
+    preg34 : null,
+    preg35 : null,
+    preg36 : null,
+    preg37 : null,
+    preg38 : null,
+    preg39 : null,
+    preg40 : null,
+    preg41 : null,
+    preg42 : null,
+    preg43 : null,
+    preg44 : null,
+    preg45 : null,
+    preg46 : null,
   }
 
   constructor() { }
@@ -86,7 +86,7 @@ export class Quest2Component implements OnInit {
         this.quest2.preg7 === null ||
         this.quest2.preg8 === null ||
         this.quest2.preg9 === null ){
-          this.error = 1;
+        this.error = 1;
       }else{
         window.scroll(0, 0);
         this.seccion++;
@@ -98,7 +98,7 @@ export class Quest2Component implements OnInit {
         this.quest2.preg11 === null ||
         this.quest2.preg12 === null ||
         this.quest2.preg13 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion++;
@@ -110,7 +110,7 @@ export class Quest2Component implements OnInit {
         this.quest2.preg15 === null ||
         this.quest2.preg16 === null ||
         this.quest2.preg17 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion++;
@@ -123,7 +123,7 @@ export class Quest2Component implements OnInit {
         this.quest2.preg20 === null ||
         this.quest2.preg21 === null ||
         this.quest2.preg22 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion++;
@@ -136,7 +136,7 @@ export class Quest2Component implements OnInit {
         this.quest2.preg25 === null ||
         this.quest2.preg26 === null ||
         this.quest2.preg27 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion++;
@@ -157,7 +157,7 @@ export class Quest2Component implements OnInit {
         this.quest2.preg38 === null ||
         this.quest2.preg39 === null ||
         this.quest2.preg40 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion++;
@@ -168,7 +168,7 @@ export class Quest2Component implements OnInit {
       if(this.quest2.preg41 === null ||
         this.quest2.preg42 === null ||
         this.quest2.preg43 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion++;
@@ -179,7 +179,7 @@ export class Quest2Component implements OnInit {
       if(this.quest2.preg44 === null ||
         this.quest2.preg45 === null ||
         this.quest2.preg46 === null ){
-          this.error = 1;
+        this.error = 1;
       } else {
         window.scroll(0, 0);
         this.seccion = 1;
@@ -218,14 +218,18 @@ export class Quest2Component implements OnInit {
     }
     let ambienteTrabajo: number = +this.quest2.preg1 + +this.quest2.preg2 + +this.quest2.preg3;
     let factoresActividad: number =  +this.quest2.preg4 +
-                                     +this.quest2.preg9 +
-                                     +this.quest2.preg5 +
-                                     +this.quest2.preg6 +
-                                     +this.quest2.preg7 +
-                                     +this.quest2.preg8 +
-                                     +this.quest2.preg41 +
-                                     +this.quest2.preg42 +
-                                     +this.quest2.preg43;
+      +this.quest2.preg9 +
+      +this.quest2.preg5 +
+      +this.quest2.preg6 +
+      +this.quest2.preg7 +
+      +this.quest2.preg8 +
+      +this.quest2.preg41 +
+      +this.quest2.preg42 +
+      +this.quest2.preg43 +
+      +this.quest2.preg10 +
+      +this.quest2.preg11 +
+      +this.quest2.preg12 +
+      +this.quest2.preg4;
   }
 
 }

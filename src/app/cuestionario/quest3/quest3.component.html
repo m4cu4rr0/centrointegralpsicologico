@@ -2,11 +2,11 @@
   <section class="seccion">
     <label class="progreso">Progreso:</label>
     <mat-progress-bar
-        [color]="primary"
-        [mode]="determinate"
-        [value]="progreso">
+      [color]="'primary'"
+      [mode]="'determinate'"
+      [value]="progreso">
     </mat-progress-bar>
-    </section>
+  </section>
   <div class="seccion" *ngIf="seccion == 1">
     <div>
       <label class="titulo">Para responder las preguntas siguientes considere las condiciones ambientales de su centro de trabajo.</label>
@@ -502,7 +502,7 @@
       </mat-radio-group>
       <label class="opcion2">56.-Me siento comprometido con mi trabajo</label>
       <mat-radio-group [(ngModel)]="quest3.preg56">
-       <mat-radio-button value="0" class="radio" color="primary">Siempre</mat-radio-button>
+        <mat-radio-button value="0" class="radio" color="primary">Siempre</mat-radio-button>
         <mat-radio-button value="1" class="radio" color="primary">Casi siempre</mat-radio-button>
         <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
         <mat-radio-button value="3" class="radio" color="primary">Casi nunca</mat-radio-button>
@@ -555,7 +555,7 @@
       </mat-radio-group>
       <label class="opcion2">62.-Se ignoran mis éxitos laborales y se atribuyen a otros trabajadores</label>
       <mat-radio-group [(ngModel)]="quest3.preg62">
-       <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+        <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
         <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
         <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
         <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
@@ -579,97 +579,97 @@
       </mat-radio-group>
     </div>
   </div>
-    <div class="seccion" *ngIf="seccion == 13">
-        <div>
-            <label class="titulo">Las preguntas siguientes están relacionadas con la atención a clientes y usuarios.</label>
-            <label class="opcion">En mi trabajo debo brindar servicio a clientes o usuarios:</label>
-            <mat-radio-group  [(ngModel)]="serCliente" (change)="clienteChange($event)">
-                <mat-radio-button value="1" class="radio" color="primary">Si</mat-radio-button>
-                <mat-radio-button value="0" class="radio" color="primary">No</mat-radio-button>
-            </mat-radio-group>
-            <div *ngIf="serCliente == 1">
-              <label class="opcion2">65.-Atiendo clientes o usuarios muy enojados</label>
-              <mat-radio-group [(ngModel)]="quest3.preg65">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-              <label class="opcion2">66.-Mi trabajo me exige atender personas muy necesitadas de ayuda o enfermas</label>
-              <mat-radio-group [(ngModel)]="quest3.preg66">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-              <label class="opcion2">67.-Para hacer mi trabajo debo demostrar sentimientos distintos a los míos</label>
-              <mat-radio-group [(ngModel)]="quest3.preg67">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-              <label class="opcion2">68,.Mi trabajo me exige atender situaciones de violencia</label>
-              <mat-radio-group [(ngModel)]="quest3.preg68">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-            </div>
-        </div>
+  <div class="seccion" *ngIf="seccion == 13">
+    <div>
+      <label class="titulo">Las preguntas siguientes están relacionadas con la atención a clientes y usuarios.</label>
+      <label class="opcion">En mi trabajo debo brindar servicio a clientes o usuarios:</label>
+      <mat-radio-group  [(ngModel)]="serCliente" (change)="clienteChange($event)">
+        <mat-radio-button value="1" class="radio" color="primary">Si</mat-radio-button>
+        <mat-radio-button value="0" class="radio" color="primary">No</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="serCliente == 1">
+        <label class="opcion2">65.-Atiendo clientes o usuarios muy enojados</label>
+        <mat-radio-group [(ngModel)]="quest3.preg65">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+        <label class="opcion2">66.-Mi trabajo me exige atender personas muy necesitadas de ayuda o enfermas</label>
+        <mat-radio-group [(ngModel)]="quest3.preg66">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+        <label class="opcion2">67.-Para hacer mi trabajo debo demostrar sentimientos distintos a los míos</label>
+        <mat-radio-group [(ngModel)]="quest3.preg67">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+        <label class="opcion2">68,.Mi trabajo me exige atender situaciones de violencia</label>
+        <mat-radio-group [(ngModel)]="quest3.preg68">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+      </div>
     </div>
-    <div class="seccion" *ngIf="seccion == 14">
-        <div>
-            <label class="opcion">Soy jefe de otros trabajadores:</label>
-            <mat-radio-group [(ngModel)]="esJefe" (change)="jefeChange($event)">
-                <mat-radio-button value="1" class="radio" color="primary">Si</mat-radio-button>
-                <mat-radio-button value="0" class="radio" color="primary">No</mat-radio-button>
-            </mat-radio-group>
-            <div *ngIf="esJefe == 1">
-              <label class="opcion2">Las preguntas siguientes están relacionadas con las actitudes de las personas que supervisa.</label>
-              <label class="opcion2">69.-Comunican tarde los asuntos de trabajo</label>
-              <mat-radio-group [(ngModel)]="quest3.preg69">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-              <label class="opcion2">70.-Dificultan el logro de los resultados del trabajo</label>
-              <mat-radio-group [(ngModel)]="quest3.preg70">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-              <label class="opcion2">71.-Cooperan poco cuando se necesita</label>
-              <mat-radio-group [(ngModel)]="quest3.preg71">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-              <label class="opcion2">72.-Ignoran las sugerencias para mejorar su trabajo</label>
-              <mat-radio-group [(ngModel)]="quest3.preg72">
-                  <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
-                  <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
-                  <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
-                  <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
-                  <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
-              </mat-radio-group>
-            </div>
-        </div>
+  </div>
+  <div class="seccion" *ngIf="seccion == 14">
+    <div>
+      <label class="opcion">Soy jefe de otros trabajadores:</label>
+      <mat-radio-group [(ngModel)]="esJefe" (change)="jefeChange($event)">
+        <mat-radio-button value="1" class="radio" color="primary">Si</mat-radio-button>
+        <mat-radio-button value="0" class="radio" color="primary">No</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="esJefe == 1">
+        <label class="opcion2">Las preguntas siguientes están relacionadas con las actitudes de las personas que supervisa.</label>
+        <label class="opcion2">69.-Comunican tarde los asuntos de trabajo</label>
+        <mat-radio-group [(ngModel)]="quest3.preg69">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+        <label class="opcion2">70.-Dificultan el logro de los resultados del trabajo</label>
+        <mat-radio-group [(ngModel)]="quest3.preg70">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+        <label class="opcion2">71.-Cooperan poco cuando se necesita</label>
+        <mat-radio-group [(ngModel)]="quest3.preg71">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+        <label class="opcion2">72.-Ignoran las sugerencias para mejorar su trabajo</label>
+        <mat-radio-group [(ngModel)]="quest3.preg72">
+          <mat-radio-button value="4" class="radio" color="primary">Siempre</mat-radio-button>
+          <mat-radio-button value="3" class="radio" color="primary">Casi siempre</mat-radio-button>
+          <mat-radio-button value="2" class="radio" color="primary">Agunas veces</mat-radio-button>
+          <mat-radio-button value="1" class="radio" color="primary">Casi nunca</mat-radio-button>
+          <mat-radio-button value="0" class="radio" color="primary">Nunca</mat-radio-button>
+        </mat-radio-group>
+      </div>
     </div>
-    <mat-error *ngIf="error === 1" class="seccion">
-      Favor de ingresar todos los datos
-    </mat-error>
+  </div>
+  <mat-error *ngIf="error === 1" class="seccion">
+    Favor de ingresar todos los datos
+  </mat-error>
   <div class="btnRow">
     <button mat-raised-button color="warn" *ngIf="seccion > 1" (click)="anterior()">Anterior</button>
     <button mat-raised-button color="primary" class="btn" (click)="siguiente()">Siguiente</button>
