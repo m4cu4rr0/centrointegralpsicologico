@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Quest2Model } from 'src/app/model/quest2.model';
+import { Quest2Model } from '../../model/quest2.model';
 
 @Component({
   selector: 'app-quest2',
