@@ -10,18 +10,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-direction: column;
   width: 100%;
 }
-
 @media print {
 
   .print {
-    display: block;
+    display: block !important;
   }
 
   .noPrint {
-    display: none;
-  }
-
-  mat-toolbar {
-    display: none;
+    display: none !important;
   }
 }
