@@ -32,10 +32,12 @@ export class ResultadosComponent implements OnInit {
   personasEncuesta: PersonaModel[];
 
   chartCalFinal: Array<any> = null;
+
   chartAmbienteTrabajo: Array<any> = null;
   chartFactoresActividad: Array<any> = null;
   chartOrganizacionTiempo: Array<any> = null;
   chartLideranzoRelaciones: Array<any> = null;
+
   chartCondicionesTrabajo: Array<any> = null;
   chartCargaTrabajo: Array<any> = null;
   chartFaltaControl: Array<any> = null;
@@ -46,10 +48,13 @@ export class ResultadosComponent implements OnInit {
   chartViolencia: Array<any> = null;
 
   chart3CalFinal: Array<any> = null;
+
   chart3AmbienteTrabajo: Array<any> = null;
   chart3FactoresActividad: Array<any> = null;
   chart3OrganizacionTiempo: Array<any> = null;
   chart3LideranzoRelaciones: Array<any> = null;
+  chart3EntornoOrganizacional: Array<any> = null;
+
   chart3CondicionesTrabajo: Array<any> = null;
   chart3CargaTrabajo: Array<any> = null;
   chart3FaltaControl: Array<any> = null;
@@ -58,7 +63,6 @@ export class ResultadosComponent implements OnInit {
   chart3Liderazgo: Array<any> = null;
   chart3RelacionesTrabajo: Array<any> = null;
   chart3Violencia: Array<any> = null;
-  chart3EntornoOrganizacional: Array<any> = null;
   chart3ReconocimientoDesemp: Array<any> = null;
   chart3InsuficientePertenencia: Array<any> = null;
 
@@ -758,7 +762,7 @@ export class ResultadosComponent implements OnInit {
         {data: [n15, b15, m15, a15, mA15], label: 'Reconocimiento del desempeño'}
       ];
       this.chart3InsuficientePertenencia = [
-        {data: [n16, b16, m16, a16, mA16], label: 'Insuficiente sentido de pertenencia e,inestabilidad'}
+        {data: [n16, b16, m16, a16, mA16], label: 'Insuficiente sentido de pertenencia e, inestabilidad'}
       ];
     });
   }
