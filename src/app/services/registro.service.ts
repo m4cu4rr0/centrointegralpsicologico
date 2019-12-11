@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {EncuestaModel} from '../model/encuesta.model';
 import {switchMap, take, tap, map} from 'rxjs/internal/operators';
-import {BehaviorSubject, Observable} from 'rxjs/index';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {PersonaModel} from '../model/persona.model';
 import { Quest2Model } from '../model/quest2.model';
 import { Quest3Model } from '../model/quest3.model';
@@ -39,6 +39,24 @@ interface PersonaData {
   id: string;
 }
 
+interface Quest2Data {
+  id: string;
+  idPersona: string;
+  calificacion: number;
+  ambienteTrabajo: number;
+  factoresActividad: number;
+  organizacionTiempo: number;
+  lideranzoRelaciones: number;
+  condicionesTrabajo: number;
+  cargaTrabajo: number;
+  faltaControl: number;
+  jornadaTrabajo: number;
+  interferenciaRelacion: number;
+  liderazgo: number;
+  relacionesTrabajo: number;
+  violencia: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -48,6 +66,7 @@ export class RegistroService {
 
   private encuestas = new BehaviorSubject<EncuestaModel[]>([]);
   private personas = new BehaviorSubject<PersonaModel[]>([]);
+  private quest2 = new BehaviorSubject<Quest2Model[]>([]);
 
   getEncuestas(): Observable<EncuestaModel[]> {
     return this.encuestas.asObservable();
@@ -107,8 +126,7 @@ export class RegistroService {
       ).toPromise();
   }
 
-  async agregarPersona(persona: PersonaModel) {
-    console.log(persona);
+  async agregarPersona(persona: PersonaModel, quest2: Quest2Model, quest3: Quest3Model) {
     return await this.http.post<{ name: string }>('https://consultoriacpi.firebaseio.com/personas.json', {
       ...persona,
       id: null
@@ -116,7 +134,15 @@ export class RegistroService {
       .pipe(
         switchMap(resData => {
           this.uniqueId = resData.name as string;
-          // console.log(this.uniqueId);
+          console.log(this.uniqueId);
+          if (quest2 != null) {
+            quest2.idPersona = this.uniqueId;
+            this.agregarQuest2(quest2);
+          }
+          if (quest3 != null) {
+            quest3.idPersona = this.uniqueId;
+            this.agregarQuest3(quest3);
+          }
           return this.uniqueId;
         })
       ).toPromise();
@@ -192,6 +218,65 @@ export class RegistroService {
           return this.uniqueId;
         })
       ).toPromise();
+  }
+
+  deleteEncuesta(id: string) {
+    let encuestaUpdated: EncuestaModel[];
+    return this.encuestas.pipe(
+      take(1),
+      switchMap(encuestas => {
+        const updatedEmpresaIndex = encuestas.findIndex(en => en.id === id);
+        encuestaUpdated = [...encuestas];
+        encuestaUpdated.splice(updatedEmpresaIndex, 1);
+        return this.http
+          .delete(`https://consultoriacpi.firebaseio.com/encuestas/${id}.json`);
+      }),
+      tap(() => {
+        this.encuestas.next(encuestaUpdated);
+      })
+    );
+
+  }
+
+  async quest2Personas(ids: string[]) {
+    return await this.http
+      .get<{ [key: string]: Quest2Data }>('https://consultoriacpi.firebaseio.com/quest2.json')
+      .pipe(map(resData => {
+          const quest2 = [];
+
+          for (const key in resData) {
+            if (resData.hasOwnProperty(key)) {
+              if (ids.find(id => id === resData[key].idPersona)) {
+                quest2.push(new Quest2Model(
+                  key,
+                  resData[key].idPersona,
+                  resData[key].calificacion,
+                  resData[key].ambienteTrabajo,
+                  resData[key].factoresActividad,
+                  resData[key].organizacionTiempo,
+                  resData[key].lideranzoRelaciones,
+                  resData[key].condicionesTrabajo,
+                  resData[key].cargaTrabajo,
+                  resData[key].faltaControl,
+                  resData[key].jornadaTrabajo,
+                  resData[key].interferenciaRelacion,
+                  resData[key].liderazgo,
+                  resData[key].relacionesTrabajo,
+                  resData[key].violencia));
+              }
+            }
+          }
+
+          return quest2;
+        }),
+        tap(quest2 => {
+          this.quest2.next(quest2);
+        })
+      ).toPromise();
+  }
+
+  getQuest2(): Observable<Quest2Model[]>  {
+    return this.quest2.asObservable();
   }
 
 
