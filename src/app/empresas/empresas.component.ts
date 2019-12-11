@@ -17,7 +17,6 @@ export class EmpresasComponent implements OnInit {
   dataSource;
   empresas: EmpresaModel[];
 
-
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
