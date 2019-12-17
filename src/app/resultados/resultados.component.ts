@@ -181,6 +181,7 @@ export class ResultadosComponent implements OnInit {
       });
       this.dataSource2 = new MatTableDataSource(this.personasEncuesta);
       this.dataSource2.sort = this.sort;
+      this.dataSource2.sortingDataAccessor = (data, header) => data[header];
       this.cargarQuest1();
       this.cargarQuest2();
       this.cargarQuest3();

@@ -134,8 +134,8 @@
               </div>
               <mat-divider style="margin:10px;"></mat-divider>
 
-              <mat-form-field>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar" class="filtro">
+              <mat-form-field class="filtro">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar" >
               </mat-form-field>
 
               <table mat-table [dataSource]="dataSource2" matSort>

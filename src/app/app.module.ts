@@ -47,6 +47,7 @@ import { LoadingComponent } from './modal/loading/loading.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.component';
+import { TablaComponent } from './tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.compo
     Quest2Component,
     Quest3Component,
     LoadingComponent,
-    DatosPersonaComponent
+    DatosPersonaComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
