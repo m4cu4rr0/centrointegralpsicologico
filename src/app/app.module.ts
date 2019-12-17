@@ -19,7 +19,8 @@ import {
   MatSelectModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
-  MatTabsModule
+  MatTabsModule,
+  MatDividerModule
 } from '@angular/material';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -90,6 +91,7 @@ import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.compo
     NgbModule,
     MatTabsModule,
     MatExpansionModule,
+    MatDividerModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],

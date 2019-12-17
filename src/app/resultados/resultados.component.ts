@@ -70,6 +70,10 @@ export class ResultadosComponent implements OnInit {
   countMuj = 0;
   countAtencion = 0 ;
   countNoAtencion = 0;
+  countAtencionM = 0 ;
+  countNoAtencionM = 0;
+  countAtencionH = 0 ;
+  countNoAtencionH = 0;
 
   chartLabels: Array<any> = ['Nulo o despreciable', 'Bajo', 'Medio', 'Alto', 'Muy alto'];
 
@@ -200,13 +204,22 @@ export class ResultadosComponent implements OnInit {
     this.personasEncuesta.forEach(p => {
       if (p.atencionQ1) {
         this.countAtencion++;
+        if (p.sexo === 'M'){
+          this.countHom++;
+          this.countAtencionH++;
+        } else {
+          this.countMuj++;
+          this.countAtencionM++;
+        }
       } else {
         this.countNoAtencion++;
-      }
-      if(p.sexo === 'M'){
-        this.countHom++;
-      } else {
-        this.countMuj++;
+        if (p.sexo === 'M'){
+          this.countHom++;
+          this.countNoAtencionH++;
+        } else {
+          this.countMuj++;
+          this.countNoAtencion++;
+        }
       }
     });
   }

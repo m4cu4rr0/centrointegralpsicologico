@@ -105,6 +105,30 @@
                   Indica personas que requerirá atención clínica
                 </mat-panel-description>
               </mat-expansion-panel-header>
+              <div class="resQues1">
+                <label class="titulo">Resumen</label>
+                <mat-divider style="margin:10px;"></mat-divider>
+                <label class="cell" style="font-weight: bold;">Agrupación</label>
+                <label class="cell" style="font-weight: bold;">Total</label>
+                <label class="cell" style="font-weight: bold;">Personas que requieren atención clínica</label>
+                <label class="cell" style="font-weight: bold;">Personas que no requieren atención clínica</label>
+                
+                <label class="cell">Total</label>
+                <label class="cell">{{countTotal}}</label>
+                <label class="cell">{{countAtencion}}</label>
+                <label class="cell">{{countNoAtencion}}</label>
+                
+                <label class="cell">Mujeres</label>
+                <label class="cell">{{countMuj}}</label>
+                <label class="cell">{{countAtencionM}}</label>
+                <label class="cell">{{countNoAtencionM}}</label>
+                
+                <label class="cell">Hombres</label>
+                <label class="cell">{{countHom}}</label>
+                <label class="cell">{{countAtencionH}}</label>
+                <label class="cell">{{countNoAtencionH}}</label>
+              </div>
+              <mat-divider style="margin:10px;"></mat-divider>
               <label *ngFor="let p of personasEncuesta" [ngClass]="p.atencionQ1 ? 'ayuda' : 'noAyuda'"
                      (click)="openDialog(p)">
                 {{p.nombre}}
