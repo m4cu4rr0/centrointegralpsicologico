@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {RegistroService} from '../services/registro.service';
 import {EncuestaModel} from '../model/encuesta.model';
 import {MatTableDataSource} from '@angular/material';
@@ -9,6 +9,7 @@ import {PersonaModel} from '../model/persona.model';
 import {MatDialog} from '@angular/material/dialog';
 import {DatosPersonaComponent} from '../modal/datos-persona/datos-persona.component';
 import {Quest2Model} from '../model/quest2.model';
+import {MatSort} from '@angular/material';
 
 @Component({
   selector: 'app-resultados',
@@ -76,6 +77,8 @@ export class ResultadosComponent implements OnInit {
   countNoAtencionH = 0;
   displayedColumns2: string[] = ['nombre', 'sexo', 'edad', 'departamento'];
   dataSource2;
+   
+  @ViewChild(MatSort) sort: MatSort;
 
   chartLabels: Array<any> = ['Nulo o despreciable', 'Bajo', 'Medio', 'Alto', 'Muy alto'];
 
@@ -102,6 +105,7 @@ export class ResultadosComponent implements OnInit {
   chartOptions: any = {
     responsive: true
   };
+  
 
   applyFilter(filterValue: string) {
     this.dataSource2.filter = filterValue.trim().toLowerCase();
@@ -175,7 +179,7 @@ export class ResultadosComponent implements OnInit {
       this.regSer.getPersonas().subscribe(resData => {
         this.personasEncuesta = resData;
       });
-      this.dataSource2 = new MatTableDataSource(this.personasEncuesta);
+      this.dataSource2 = new MatTableDataSource(this.personasEncuesta, );
       this.cargarQuest1();
       this.cargarQuest2();
       this.cargarQuest3();
