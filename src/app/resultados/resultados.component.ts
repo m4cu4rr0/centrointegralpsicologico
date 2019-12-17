@@ -78,7 +78,7 @@ export class ResultadosComponent implements OnInit {
   displayedColumns2: string[] = ['nombre', 'sexo', 'edad', 'departamento'];
   dataSource2;
    
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   chartLabels: Array<any> = ['Nulo o despreciable', 'Bajo', 'Medio', 'Alto', 'Muy alto'];
 
@@ -179,7 +179,8 @@ export class ResultadosComponent implements OnInit {
       this.regSer.getPersonas().subscribe(resData => {
         this.personasEncuesta = resData;
       });
-      this.dataSource2 = new MatTableDataSource(this.personasEncuesta, );
+      this.dataSource2 = new MatTableDataSource(this.personasEncuesta);
+      this.dataSource2.sort = this.sort;
       this.cargarQuest1();
       this.cargarQuest2();
       this.cargarQuest3();
