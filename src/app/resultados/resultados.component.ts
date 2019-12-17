@@ -65,6 +65,12 @@ export class ResultadosComponent implements OnInit {
   chart3ReconocimientoDesemp: Array<any> = null;
   chart3InsuficientePertenencia: Array<any> = null;
 
+  countTotal = 0;
+  countHom = 0;
+  countMuj = 0;
+  countAtencion = 0 ;
+  countNoAtencion = 0;
+
   chartLabels: Array<any> = ['Nulo o despreciable', 'Bajo', 'Medio', 'Alto', 'Muy alto'];
 
   chartColors: Array<any> = [
@@ -163,7 +169,9 @@ export class ResultadosComponent implements OnInit {
       this.regSer.getPersonas().subscribe(resData => {
         this.personasEncuesta = resData;
       });
+      this.cargarQuest1();
       this.cargarQuest2();
+      this.cargarQuest3();
     });
   }
 
@@ -185,6 +193,22 @@ export class ResultadosComponent implements OnInit {
     WindowPrt.focus();
     WindowPrt.print();
     WindowPrt.close();
+  }
+
+  cargarQuest1() {
+    this.countTotal = this.personasEncuesta.length;
+    this.personasEncuesta.forEach(p => {
+      if (p.atencionQ1) {
+        this.countAtencion++;
+      } else {
+        this.countNoAtencion++;
+      }
+      if(p.sexo === 'M'){
+        this.countHom++;
+      } else {
+        this.countMuj++;
+      }
+    });
   }
 
   cargarQuest2() {
