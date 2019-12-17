@@ -17,8 +17,7 @@ import {Quest2Model} from '../model/quest2.model';
 })
 export class ResultadosComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,
-              public regSer: RegistroService,
+  constructor(public regSer: RegistroService,
               public empSer: EmpresasService,
               private confirmationDialogService: ConfirmationDialogService) {
   }
@@ -165,14 +164,6 @@ export class ResultadosComponent implements OnInit {
         this.personasEncuesta = resData;
       });
       this.cargarQuest2();
-    });
-  }
-
-  openDialog(persona: PersonaModel): void {
-    const dialogRef = this.dialog.open(DatosPersonaComponent, {
-      width: '600px',
-      data: {persona},
-      disableClose: true
     });
   }
 
