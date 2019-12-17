@@ -74,6 +74,8 @@ export class ResultadosComponent implements OnInit {
   countNoAtencionM = 0;
   countAtencionH = 0 ;
   countNoAtencionH = 0;
+  displayedColumns2: string[] = ['nombre', 'sexo', 'edad', 'departamento'];
+  dataSource2;
 
   chartLabels: Array<any> = ['Nulo o despreciable', 'Bajo', 'Medio', 'Alto', 'Muy alto'];
 
@@ -102,7 +104,7 @@ export class ResultadosComponent implements OnInit {
   };
 
   applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource2.filter = filterValue.trim().toLowerCase();
   }
 
   chartClicked(e: any): void {
@@ -173,6 +175,7 @@ export class ResultadosComponent implements OnInit {
       this.regSer.getPersonas().subscribe(resData => {
         this.personasEncuesta = resData;
       });
+      this.dataSource2 = new MatTableDataSource(this.personasEncuesta);
       this.cargarQuest1();
       this.cargarQuest2();
       this.cargarQuest3();
