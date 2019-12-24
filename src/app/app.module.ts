@@ -20,8 +20,7 @@ import {
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatTabsModule,
-  MatDividerModule,
-  MatSortModule
+  MatSlideToggleModule
 } from '@angular/material';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -47,6 +46,8 @@ import { LoadingComponent } from './modal/loading/loading.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.component';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -92,12 +93,14 @@ import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.compo
     NgbModule,
     MatTabsModule,
     MatExpansionModule,
-    MatDividerModule,
+    MatSlideToggleModule,
     MatSortModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: MatDialogRef, useValue: {} },
+              { provide: MAT_DIALOG_DATA, useValue: [] },
+              {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
-  entryComponents: [NuevaEmpresaComponent, ConfirmationDialogComponent, LoadingComponent, DatosPersonaComponent],
+  entryComponents: [NuevaEmpresaComponent, ConfirmationDialogComponent, LoadingComponent, DatosPersonaComponent, EncuestaComponent],
 })
 export class AppModule { }
