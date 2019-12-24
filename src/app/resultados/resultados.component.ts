@@ -9,14 +9,12 @@ import {PersonaModel} from '../model/persona.model';
 import {MatDialog} from '@angular/material/dialog';
 import {DatosPersonaComponent} from '../modal/datos-persona/datos-persona.component';
 import {EncuestaComponent} from '../encuesta/encuesta.component';
-import {MatSort} from '@angular/material/sort';
+import {MatSort, Sort} from '@angular/material/sort';
 import {Quest3Model} from '../model/quest3.model';
 import {Quest2Model} from '../model/quest2.model';
 
-interface PerQuest {
-  persona: PersonaModel;
-  quest3: Quest3Model;
-  quest2: Quest2Model;
+export class PerQuest {
+  constructor(public nombre: string, public departamento: string){};
 }
 
 @Component({
@@ -145,8 +143,16 @@ export class ResultadosComponent implements OnInit {
   countNoAtencionH = 0;
   displayedColumns2: string[] = ['nombre', 'sexo', 'edad', 'departamento'];
   dataSource2;
+  displayedColumns3: string[] = ['nombre', 'departamento'];
+  dataSource3;
+
+  
+  quest2: Quest2Model[];
+  quest3: Quest3Model[];
+  perQuests: PerQuest[] = [];
 
   sort;
+  sort2;
   // @ts-ignore
   @ViewChild(MatSort) set content(content: ElementRef) {
     this.sort = content;
@@ -155,6 +161,17 @@ export class ResultadosComponent implements OnInit {
         return;
       }
       this.dataSource2.sort = this.sort;
+
+    }
+  }
+
+  @ViewChild(MatSort) set content2(content2: ElementRef) {
+    this.sort2 = content2;
+    if (this.sort2) {
+      if (!this.dataSource3) {
+        return;
+      }
+      this.dataSource3.sort = this.sort2;
 
     }
   }
@@ -208,6 +225,10 @@ export class ResultadosComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource2.filter = filterValue.trim().toLowerCase();
+  }
+
+  applyFilter2(filterValue: string) {
+    this.dataSource3.filter = filterValue.trim().toLowerCase();
   }
 
   chartClicked(e: any): void {
@@ -416,7 +437,6 @@ export class ResultadosComponent implements OnInit {
     let m13 = 0;
     let a13 = 0;
     let mA13 = 0;
-    let quest2;
     let longitud = 0;
     this.promedioQ2 = 0;
     this.promedioQ2C1 = 0;
@@ -435,11 +455,11 @@ export class ResultadosComponent implements OnInit {
     this.personasEncuesta.forEach(p => ids.push(p.id));
     this.regSer.quest2Personas(ids).then(() => {
       this.regSer.getQuest2().subscribe(resData => {
-        quest2 = resData;
-        // console.log(quest2);
-        longitud = quest2.length;
+        this.quest2 = resData;
+        // console.log(this.quest2);
+        longitud = this.quest2.length;
       });
-      quest2.forEach(q => {
+      this.quest2.forEach(q => {
         if (q.calificacion < 20) {
           n1++;
         } else if (q.calificacion < 45) {
@@ -786,17 +806,16 @@ export class ResultadosComponent implements OnInit {
     let m16 = 0;
     let a16 = 0;
     let mA16 = 0;
-    let quest3;
     let longitud = 0;
 
     this.personasEncuesta.forEach(p => ids.push(p.id));
     this.regSer.quest3Personas(ids).then(() => {
       this.regSer.getQuest3().subscribe(resData => {
-        quest3 = resData;
+        this.quest3 = resData;
         // console.log(quest3);
-        longitud = quest3.length;
+        longitud = this.quest3.length;
       });
-      quest3.forEach(q => {
+      this.quest3.forEach(q => {
         if (q.calificacion < 20) {
           n1++;
         } else if (q.calificacion < 45) {
@@ -1112,6 +1131,7 @@ export class ResultadosComponent implements OnInit {
           borderWidth: 2,
         }
       ];
+      this.acomodarEncuestas();
     });
   }
 
@@ -1711,6 +1731,30 @@ export class ResultadosComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  acomodarEncuestas(){
+    let quest2Temp: Quest2Model = null;
+    let quest3Temp: Quest3Model = null;
+    this.personasEncuesta.forEach(p => {
+      // console.log(p);
+      if(this.quest2 != undefined){
+        quest2Temp = this.quest2.find(q => q.idPersona === p.id);
+      // console.log(quest2Temp);
+      }
+      if(this.quest3 != undefined){
+        quest3Temp = this.quest3.find(q => q.idPersona === p.id);
+      // console.log(quest3Temp);
+      }
+      this.perQuests.push(new PerQuest(p.nombre, p.departamento));
+      // console.log(perQuest.persona);
+    });
+    this.dataSource3 = new MatTableDataSource(this.perQuests);
+    this.dataSource3.sort = this.sort2;
+    const sortState: Sort = {active: 'departamento', direction: 'asc'};
+    this.sort.active = sortState.active;
+    this.sort.direction = sortState.direction;
+    this.sort.sortChange.emit(sortState);
   }
 
 }

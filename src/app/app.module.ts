@@ -13,7 +13,6 @@ import {
   MatCardModule,
   MatInputModule,
   MatMenuModule,
-  MatDialogModule,
   MatListModule,
   MatRadioModule,
   MatSelectModule,
@@ -48,6 +47,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.component';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {MatSortModule} from '@angular/material/sort';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -81,7 +81,6 @@ import {MatSortModule} from '@angular/material/sort';
     MatCardModule,
     MatInputModule,
     MatMenuModule,
-    MatDialogModule,
     MatListModule,
     MatSelectModule,
     MatProgressSpinnerModule,
@@ -95,6 +94,7 @@ import {MatSortModule} from '@angular/material/sort';
     MatExpansionModule,
     MatSlideToggleModule,
     MatSortModule,
+    MatDialogModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [{ provide: MatDialogRef, useValue: {} },
