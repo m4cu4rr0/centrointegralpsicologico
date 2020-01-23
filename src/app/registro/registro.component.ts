@@ -24,7 +24,7 @@ export class RegistroComponent implements OnInit {
   quest2Res: Quest2Model;
   quest3Res: Quest3Model;
 
-  constructor(public dialog: MatDialog, private regService: RegistroService) { }
+  constructor(private regService: RegistroService) { }
 
   ngOnInit() {
     this.nuevaPersona = new PersonaModel(null, null, null, null, null, null, null,
@@ -145,15 +145,8 @@ export class RegistroComponent implements OnInit {
   }
 
   terminar() {
-    let id: string;
-    this.regService.agregarPersona(this.nuevaPersona).then( resData => {
-      console.log(resData);
-      id = this.regService.uniqueId;
-      console.log(id);
-      this.quest2Res.idPersona = id;
-      this.quest3Res.idPersona = id;
-      this.regService.agregarQuest2(this.quest2Res);
-      this.regService.agregarQuest3(this.quest3Res);
+    this.regService.agregarPersona(this.nuevaPersona, this.quest2Res, this.quest3Res).then( resData => {
+      // console.log(resData);
     });
     this.cuestionario = 6;
   }

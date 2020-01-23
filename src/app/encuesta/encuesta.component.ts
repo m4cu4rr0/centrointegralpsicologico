@@ -31,10 +31,9 @@ export class EncuestaComponent implements OnInit {
   constructor(public empService: EmpresasService,
               private router: Router,
               private regService: RegistroService,
-              public dialog: MatDialog,
               public dialogRefAc: MatDialogRef<EncuestaComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-    this.nuevaEncuesta = data.encuesta;
+      this.nuevaEncuesta = data.encuesta;
   }
 
   ngOnInit() {
@@ -42,7 +41,7 @@ export class EncuestaComponent implements OnInit {
     if (this.nuevaEncuesta ) {
       // console.log(this.nuevaEncuesta);
     } else {
-      this.nuevaEncuesta = new EncuestaModel(null, null, null, false, false, false, []);
+      this.nuevaEncuesta = new EncuestaModel(null, null, null, false, false, false, false, false, []);
     }
     this.newId = null;
   }

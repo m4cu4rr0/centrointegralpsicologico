@@ -29,11 +29,13 @@
   padding: 40px;
 }
 .checkbox{
-  max-width: 80%;
+  min-width: 100% !important;
+  margin-left: 80px;
 }
 .btnRow{
   margin: 2%;
   margin-left: 40%;
+  padding-bottom: 20px;
 }
 
 .btn{

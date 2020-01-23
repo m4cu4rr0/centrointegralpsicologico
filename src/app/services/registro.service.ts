@@ -14,6 +14,7 @@ interface EncuestaData {
   quest1: boolean;
   quest2: boolean;
   quest3: boolean;
+  areas: string[];
 }
 
 interface PersonaData {
@@ -136,7 +137,8 @@ export class RegistroService {
                 resData[key].numPersonas,
                 resData[key].quest1,
                 resData[key].quest2,
-                resData[key].quest3));
+                resData[key].quest3,
+                resData[key].areas));
             }
           }
 
@@ -343,6 +345,25 @@ export class RegistroService {
 
   getQuest3(): Observable<Quest3Model[]>  {
     return this.quest3.asObservable();
+  }
+
+  updateEmpresa(encuesta: EncuestaModel) {
+    let encuestasUpdated: EncuestaModel[];
+    return this.encuestas.pipe(
+      take(1),
+      switchMap(encuestas => {
+        const updatedEncuestaIndex = encuestas.findIndex(emp => emp.id === encuesta.id);
+        encuestasUpdated = [...encuestas];
+        encuestasUpdated[updatedEncuestaIndex] = encuesta;
+        return this.http
+          .put(`https://consultoriacpi.firebaseio.com/encuestas/${encuesta.id}.json`,
+            {...encuesta, id: null}
+          );
+      }),
+      tap(() => {
+        this.encuestas.next(encuestasUpdated);
+      })
+    );
   }
 
 
