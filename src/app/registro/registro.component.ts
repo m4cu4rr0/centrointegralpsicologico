@@ -24,7 +24,7 @@ export class RegistroComponent implements OnInit {
   quest2Res: Quest2Model;
   quest3Res: Quest3Model;
 
-  constructor(private regService: RegistroService) { }
+  constructor(public dialog: MatDialog, private regService: RegistroService) { }
 
   ngOnInit() {
     this.nuevaPersona = new PersonaModel(null, null, null, null, null, null, null,

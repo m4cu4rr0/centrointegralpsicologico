@@ -13,6 +13,7 @@ import {
   MatCardModule,
   MatInputModule,
   MatMenuModule,
+  MatDialogModule,
   MatListModule,
   MatRadioModule,
   MatSelectModule,
@@ -47,7 +48,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DatosPersonaComponent } from './modal/datos-persona/datos-persona.component';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {MatSortModule} from '@angular/material/sort';
-import {MatDialogModule} from '@angular/material/dialog';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { Quest4Component } from './cuestionario/quest4/quest4.component';
+import { Quest5Component } from './cuestionario/quest5/quest5.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     Quest2Component,
     Quest3Component,
     LoadingComponent,
-    DatosPersonaComponent
+    DatosPersonaComponent,
+    Quest4Component,
+    Quest5Component
   ],
   imports: [
     BrowserModule,
@@ -81,6 +87,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatCardModule,
     MatInputModule,
     MatMenuModule,
+    MatDialogModule,
     MatListModule,
     MatSelectModule,
     MatProgressSpinnerModule,
@@ -94,8 +101,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatExpansionModule,
     MatSlideToggleModule,
     MatSortModule,
-    MatDialogModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ provide: MatDialogRef, useValue: {} },
               { provide: MAT_DIALOG_DATA, useValue: [] },

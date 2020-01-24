@@ -6,7 +6,7 @@ import {EmpresasService} from '../services/empresas.service';
 import {EmpresaModel} from '../model/empresa.model';
 import {ConfirmationDialogService} from '../modal/confirmation-dialog/confirmation-dialog.service';
 import {PersonaModel} from '../model/persona.model';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material';
 import {DatosPersonaComponent} from '../modal/datos-persona/datos-persona.component';
 import {EncuestaComponent} from '../encuesta/encuesta.component';
 import {MatSort, Sort} from '@angular/material/sort';
@@ -153,8 +153,7 @@ export class ResultadosComponent implements OnInit {
 
   sort;
   sort2;
-  // @ts-ignore
-  @ViewChild(MatSort) set content(content: ElementRef) {
+  @ViewChild(MatSort, {static: false}) set content(content: ElementRef) {
     this.sort = content;
     if (this.sort) {
       if (!this.dataSource2) {
@@ -165,7 +164,7 @@ export class ResultadosComponent implements OnInit {
     }
   }
 
-  @ViewChild(MatSort) set content2(content2: ElementRef) {
+  @ViewChild(MatSort, {static: false}) set content2(content2: ElementRef) {
     this.sort2 = content2;
     if (this.sort2) {
       if (!this.dataSource3) {
@@ -1271,6 +1270,7 @@ export class ResultadosComponent implements OnInit {
   }
 
   openDialogEn(encuesta: EncuestaModel): void {
+    console.log(encuesta);
     const dialogRef = this.dialog.open(EncuestaComponent, {
       width: '700px',
       data: {encuesta},

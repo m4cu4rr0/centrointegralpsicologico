@@ -31,8 +31,10 @@ export class EncuestaComponent implements OnInit {
   constructor(public empService: EmpresasService,
               private router: Router,
               private regService: RegistroService,
+              public dialog: MatDialog,
               public dialogRefAc: MatDialogRef<EncuestaComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+                console.log(data);
       this.nuevaEncuesta = data.encuesta;
   }
 
@@ -104,7 +106,8 @@ export class EncuestaComponent implements OnInit {
   }
 
   addArea() {
-    if (this.area !== '') {
+    console.log(this.area);
+    if (this.area !== '' && this.area !== undefined) {
     this.nuevaEncuesta.areas.push(this.area);
     this.area = '';
     }
