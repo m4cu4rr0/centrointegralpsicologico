@@ -34,7 +34,7 @@ export class EncuestaComponent implements OnInit {
               public dialog: MatDialog,
               public dialogRefAc: MatDialogRef<EncuestaComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-                console.log(data);
+              //  console.log(data);
       this.nuevaEncuesta = data.encuesta;
   }
 
@@ -51,6 +51,7 @@ export class EncuestaComponent implements OnInit {
   cargarEmpresa() {
     this.empService.fetchEmpresas().then(() => {
       this.empService.getEmpresas().subscribe(empresas => {
+        console.log(empresas);
         this.empresas = empresas;
       });
     });
@@ -61,7 +62,8 @@ export class EncuestaComponent implements OnInit {
   }
 
   save() {
-    if (this.nuevaEncuesta.idEmpresa != null && this.nuevaEncuesta.numPersonas != null) {
+    console.log(this.nuevaEncuesta.areas.length);
+    if (this.nuevaEncuesta.idEmpresa != null && this.nuevaEncuesta.numPersonas != null && this.nuevaEncuesta.areas.length > 0 ) {
       this.openDialog('Creando encuesta');
       this.regService.agregarEncuesta(this.nuevaEncuesta).then( () => {
         this.newId = this.regService.uniqueId;
@@ -106,7 +108,7 @@ export class EncuestaComponent implements OnInit {
   }
 
   addArea() {
-    console.log(this.area);
+    // console.log(this.area);
     if (this.area !== '' && this.area !== undefined) {
     this.nuevaEncuesta.areas.push(this.area);
     this.area = '';

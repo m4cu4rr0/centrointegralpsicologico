@@ -60,18 +60,18 @@ export class Quest4Component implements OnInit {
   }
 
   calificaQuest() {
-    const total = this.quest4.preg1 +
-                  this.quest4.preg2 +
-                  this.quest4.preg3 +
-                  this.quest4.preg4 +
-                  this.quest4.preg5 +
-                  this.quest4.preg6 +
-                  this.quest4.preg7 +
-                  this.quest4.preg8 +
-                  this.quest4.preg9 +
-                  this.quest4.preg10 +
-                  this.quest4.preg11 +
-                  this.quest4.preg12;
+    const total = +this.quest4.preg1 +
+                  +this.quest4.preg2 +
+                  +this.quest4.preg3 +
+                  +this.quest4.preg4 +
+                  +this.quest4.preg5 +
+                  +this.quest4.preg6 +
+                  +this.quest4.preg7 +
+                  +this.quest4.preg8 +
+                  +this.quest4.preg9 +
+                  +this.quest4.preg10 +
+                  +this.quest4.preg11 +
+                  +this.quest4.preg12;
     if(total < 18){
       this.calificacion = 1;
     }  else if(total < 30) {

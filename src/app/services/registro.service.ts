@@ -14,6 +14,8 @@ interface EncuestaData {
   quest1: boolean;
   quest2: boolean;
   quest3: boolean;
+  quest4: boolean;
+  quest5: boolean;
   areas: string[];
 }
 
@@ -36,7 +38,12 @@ interface PersonaData {
   quest1: string;
   quest2: string;
   quest3: string;
+  quest4: string;
+  quest5: string;
   atencionQ1: boolean;
+  calificacion1: number;
+  calificacion2: number;
+  calificacion3: number;
   id: string;
 }
 
@@ -138,6 +145,8 @@ export class RegistroService {
                 resData[key].quest1,
                 resData[key].quest2,
                 resData[key].quest3,
+                resData[key].quest4,
+                resData[key].quest5,
                 resData[key].areas));
             }
           }
@@ -200,7 +209,12 @@ export class RegistroService {
                   resData[key].quest1,
                   resData[key].quest2,
                   resData[key].quest3,
+                  resData[key].quest4,
+                  resData[key].quest5,
                   resData[key].atencionQ1,
+                  resData[key].calificacion1,
+                  resData[key].calificacion2,
+                  resData[key].calificacion3,
                   key));
               }
             }

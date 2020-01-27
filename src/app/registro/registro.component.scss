@@ -1,16 +1,24 @@
 .login{
-  height: 30vh;
-  margin-left: 25vw;
-  width: 100vw;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 30%;
+  height: 30%;
 }
 .input{
-  width: 100vw;
-  padding-right: 50vw;
+  width: 70%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .btn{
   margin-top: 50px;
+  margin-left: 30%;
   font-size: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .btn2{
   margin-top: 50px;
@@ -24,14 +32,30 @@ btnTerminar{
 }
 
 .img{
-  height: 25vh;
-  width: 50vw;
-  margin-left: 25vw;
-  margin-top: 10vh;
+  height: 150px;
+  width: 300px;
+}
+.imagen{
+  position: absolute;
+  left: 43%;
+  margin-left: -50px;
+  margin-top: 5%;
+}
+.img2{
+  height: 50px;
+  width: 100px;
+}
+.imagen2{
+  position: absolute;
+  left: 73%;
+  margin-top: 1%;
+  margin-bottom: 10px;
 }
 .folio{
   margin-top: 20px;
-  width: 100vw;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
   color: #3F50B5;
 }
 .datos{

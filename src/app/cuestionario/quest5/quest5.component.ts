@@ -84,13 +84,13 @@ export class Quest5Component implements OnInit {
   }
 
   calificaQuest() {
-    const total1 = this.quest5.preg1 +
-                  this.quest5.preg2 +
-                  this.quest5.preg3 +
-                  this.quest5.preg4 +
-                  this.quest5.preg5 +
-                  this.quest5.preg6 +
-                  this.quest5.preg7;
+    const total1 = +this.quest5.preg1 +
+                  +this.quest5.preg2 +
+                  +this.quest5.preg3 +
+                  +this.quest5.preg4 +
+                  +this.quest5.preg5 +
+                  +this.quest5.preg6 +
+                  +this.quest5.preg7;
     if(total1 < 14){
       this.calificacion1 = 1;
     }  else if(total1 < 35) {
@@ -98,14 +98,14 @@ export class Quest5Component implements OnInit {
     } else {
       this.calificacion1 = 3;
     } 
-    const total2 = this.quest5.preg8 +
-                  this.quest5.preg9 +
-                  this.quest5.preg10 +
-                  this.quest5.preg11 +
-                  this.quest5.preg12 +
-                  this.quest5.preg13 +
-                  this.quest5.preg14 +
-                  this.quest5.preg15;
+    const total2 = +this.quest5.preg8 +
+                  +this.quest5.preg9 +
+                  +this.quest5.preg10 +
+                  +this.quest5.preg11 +
+                  +this.quest5.preg12 +
+                  +this.quest5.preg13 +
+                  +this.quest5.preg14 +
+                  +this.quest5.preg15;;
     if(total2 < 20){
       this.calificacion2 = 1;
     }  else if(total2 < 44) {

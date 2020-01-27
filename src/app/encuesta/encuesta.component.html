@@ -62,7 +62,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <mat-error *ngIf="error === 1" style="margin-left: 40px;">
-      Debe seleccionar empresa e indicar número de personas.
+      Debe seleccionar empresa, agregar al menos un área e indicar el número de personas.
     </mat-error>
     <div class="btnRow" *ngIf="nuevaEncuesta.id === null">
       <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
