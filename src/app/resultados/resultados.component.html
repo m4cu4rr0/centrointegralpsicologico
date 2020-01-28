@@ -66,6 +66,34 @@
         </td>
       </ng-container>
 
+      <ng-container matColumnDef="encuesta4">
+        <th mat-header-cell *matHeaderCellDef>
+          Encuesta 4
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <i class="material-icons" *ngIf="element.quest4" style="color: green">
+            check
+          </i>
+          <i class="material-icons" *ngIf="!element.quest4" style="color: red">
+            clear
+          </i>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="encuesta5">
+        <th mat-header-cell *matHeaderCellDef>
+          Encuesta 5
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <i class="material-icons" *ngIf="element.quest5" style="color: green">
+            check
+          </i>
+          <i class="material-icons" *ngIf="!element.quest5" style="color: red">
+            clear
+          </i>
+        </td>
+      </ng-container>
+
       <ng-container matColumnDef="acciones">
         <th mat-header-cell *matHeaderCellDef>
           Acción
@@ -143,16 +171,7 @@
               </div>
               <mat-divider style="margin:50px;"></mat-divider>
               <div class="graph" *ngIf="chart1 != null">
-                <canvas mdbChart
-                        [chartType]="'pie'"
-                        [datasets]="chart1"
-                        [labels]="chartLabels1"
-                        [colors]="chartColors1"
-                        [options]="chartOptions"
-                        [legend]="true"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
-                </canvas>
+                
               </div>
             </mat-expansion-panel>
             <mat-expansion-panel [ngClass]="q12Class">
@@ -286,16 +305,7 @@
               </div>
               <mat-divider style="margin:10px;"></mat-divider>
               <div class="graph" *ngIf="chart2Prom != null">
-                <canvas mdbChart
-                        [chartType]="chartType"
-                        [datasets]="chart2Prom"
-                        [labels]="chartLabels22"
-                        [colors]="chartColors22"
-                        [options]="chartOptions"
-                        [legend]="true"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
-                </canvas>
+                
               </div>
               <mat-divider style="margin:10px;"></mat-divider>
               <div class="tabAyuda">
@@ -312,16 +322,7 @@
               </div>
               <mat-divider style="margin:10px;"></mat-divider>
               <div class="graph" *ngIf="chart2PromDom != null">
-                <canvas mdbChart
-                        [chartType]="chartType"
-                        [datasets]="chart2PromDom"
-                        [labels]="chartLabels32"
-                        [colors]="chartColors32"
-                        [options]="chartOptions"
-                        [legend]="true"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
-                </canvas>
+                
               </div>
               <mat-divider style="margin:10px;"></mat-divider>
               <div class="tabAyuda">
@@ -364,16 +365,7 @@
                 Gráficas Pie
               </mat-slide-toggle>
               <div class="graph" *ngIf="chartCalFinal != null">
-                <canvas mdbChart
-                        [chartType]="chartType"
-                        [datasets]="chartCalFinal"
-                        [labels]="chartLabels"
-                        [colors]="chartColors"
-                        [options]="chartOptions"
-                        [legend]="true"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
-                </canvas>
+                
               </div>
             </mat-expansion-panel>
             <mat-expansion-panel [ngClass]="q22Class">
@@ -395,28 +387,10 @@
                 Gráficas Pie
               </mat-slide-toggle>
               <div class="graph" *ngIf="chartAmbienteTrabajo != null">
-                <canvas mdbChart
-                        [chartType]="chartType"
-                        [datasets]="chartAmbienteTrabajo"
-                        [labels]="chartLabels"
-                        [colors]="chartColors"
-                        [options]="chartOptions"
-                        [legend]="true"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
-                </canvas>
+                
               </div>
               <div class="graph" *ngIf="chartFactoresActividad != null">
-                <canvas mdbChart
-                        [chartType]="chartType"
-                        [datasets]="chartFactoresActividad"
-                        [labels]="chartLabels"
-                        [colors]="chartColors"
-                        [options]="chartOptions"
-                        [legend]="true"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
-                </canvas>
+               
               </div>
               <div class="graph" *ngIf="chartOrganizacionTiempo != null">
                 <canvas mdbChart

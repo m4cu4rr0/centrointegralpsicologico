@@ -183,40 +183,38 @@ export class RegistroService {
 
   async personasFolio(folio: string) {
     return await this.http
-      .get<{ [key: string]: PersonaData }>('https://consultoriacpi.firebaseio.com/personas.json')
+      .get<{ [key: string]: PersonaData }>(`https://consultoriacpi.firebaseio.com/personas.json?orderBy="folio"&equalTo="${folio}"`)
       .pipe(map(resData => {
           const personas = [];
 
           for (const key in resData) {
             if (resData.hasOwnProperty(key)) {
-              if (resData[key].folio === folio) {
-                personas.push(new PersonaModel(
-                  resData[key].nombre,
-                  resData[key].edad,
-                  resData[key].sexo,
-                  resData[key].edoCivil,
-                  resData[key].estudios,
-                  resData[key].ocupacion,
-                  resData[key].departamento,
-                  resData[key].puesto,
-                  resData[key].contratacion,
-                  resData[key].personal,
-                  resData[key].jornada,
-                  resData[key].rotacion,
-                  resData[key].expActual,
-                  resData[key].expTotal,
-                  resData[key].folio,
-                  resData[key].quest1,
-                  resData[key].quest2,
-                  resData[key].quest3,
-                  resData[key].quest4,
-                  resData[key].quest5,
-                  resData[key].atencionQ1,
-                  resData[key].calificacion1,
-                  resData[key].calificacion2,
-                  resData[key].calificacion3,
-                  key));
-              }
+              personas.push(new PersonaModel(
+                resData[key].nombre,
+                resData[key].edad,
+                resData[key].sexo,
+                resData[key].edoCivil,
+                resData[key].estudios,
+                resData[key].ocupacion,
+                resData[key].departamento,
+                resData[key].puesto,
+                resData[key].contratacion,
+                resData[key].personal,
+                resData[key].jornada,
+                resData[key].rotacion,
+                resData[key].expActual,
+                resData[key].expTotal,
+                resData[key].folio,
+                resData[key].quest1,
+                resData[key].quest2,
+                resData[key].quest3,
+                resData[key].quest4,
+                resData[key].quest5,
+                resData[key].atencionQ1,
+                resData[key].calificacion1,
+                resData[key].calificacion2,
+                resData[key].calificacion3,
+                key));
             }
           }
 
